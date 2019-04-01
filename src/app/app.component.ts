@@ -7,9 +7,14 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  email = new FormControl('');
+  // email = new FormControl('');
 
-  updateEmail() {
-    this.email.setValue('victor@jaquez.me');
+  // updateEmail() {
+  //   this.email.setValue('victor@jaquez.me');
+  // }
+  data: any = {};
+
+  onSubmit() {
+    alert(JSON.stringify(this.data));
   }
 }
