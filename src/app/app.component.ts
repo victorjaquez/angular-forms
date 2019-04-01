@@ -8,4 +8,8 @@ import { FormControl } from '@angular/forms';
 })
 export class AppComponent {
   email = new FormControl('');
+
+  updateEmail() {
+    this.email.setValue('victor@jaquez.me');
+  }
 }
