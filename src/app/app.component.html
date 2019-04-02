@@ -11,6 +11,9 @@
         Name is required.
       </div>
     </div>
+    <div class="form-group">
+      <button class="btn btn-success" type="submit" [disabled]="angForm.pristine || angForm.invalid">Save</button>
+    </div>
   </form>
   <p> Form value: {{ angForm.value | json }}</p>
   <p> Form status: {{ angForm.status | json }}</p>
