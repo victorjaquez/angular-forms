@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,15 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  // email = new FormControl('');
-
-  // updateEmail() {
-  //   this.email.setValue('victor@jaquez.me');
-  // }
-  data: any = {};
-
-  onSubmit() {
-    alert(JSON.stringify(this.data));
+  angForm: FormGroup;
+    
+  constructor(private fb: FormBuilder) {
+      this.createForm();
+    } 
+  
+  createForm() {
+    this.angForm = this.fb.group({
+      name: ['', Validators.required ]
+    });
   }
 }
